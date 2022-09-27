@@ -1,0 +1,116 @@
+﻿<h4>
+    <!-- ko if: Family -->
+    <span data-bind="text: Family"></span>
+    <!-- /ko -->
+    <span data-bind="text: Genus" class="plantname"></span>
+    <span data-bind="text: Sp1" class="plantname"></span>
+    <span data-bind="text: Author1"></span>
+    <span data-bind="text: Rank1"></span>
+    <span data-bind="text: Sp2" class="plantname"></span>
+    <span data-bind="text: Author2"></span>
+    <span data-bind="text: Rank2"></span>
+    <span data-bind="text: Sp3" class="plantname"></span>
+    <span data-bind="text: Author3"></span>
+</h4>
+<!-- ko if: SpeciesCitation || TaxStat -->
+<p>
+    <!-- ko if: SpeciesCitation -->
+    <span data-bind="text: SpeciesCitation + ' '"></span>
+    <!-- /ko -->
+    <!-- ko if: TaxStat -->
+    <span data-bind="text: '[' + TaxStat + ']'"></span>
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<div data-bind="foreach: ImageResults, visible: ImageCount" style="margin: 1.5em auto;">
+    <a data-bind="attr: { href: ZoomifyUrl + '?width=800px&height=800px', target: '_blank'}">
+        <div style="max-width: 32%; height: 100px;" class="imagediv" data-bind="css: { istype: IsType }">
+            <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 96%; height: 96%;" />
+        </div>
+    </a>
+</div>
+<div style="clear: both;"></div>
+<p>
+    <!-- ko if: PrincipalCollector -->
+    <span class="linklabel">Principal Collector:</span>
+    <span data-bind="text: PrincipalCollector"></span>
+    <!-- /ko -->
+    <!-- ko if: FullNumber -->
+    <br />
+    <span class="linklabel">Collection No:</span>
+    <span data-bind="text: FullNumber"></span>
+    <!-- /ko -->
+    <!-- ko if: DateCollected -->
+    <br />
+    <span class="linklabel">Date (Y-M-D):</span>
+    on <span data-bind="text: DateCollected"></span>
+    <!-- /ko -->
+    <!-- ko if: AdditionalCollectors -->
+    <br />
+    <span class="linklabel">With:</span>
+    <span data-bind="text: AdditionalCollectors"></span>
+    <!-- /ko -->
+
+</p>
+<!-- ko if: CountryName -->
+<p>
+    <span class="linklabel">Country:</span>
+    <span data-bind="html: CountryName"></span>,
+    <!-- ko if: MajorRegion -->
+    <span data-bind="html: MajorRegion"></span>,
+    <!-- /ko -->
+    <!-- ko if: MinorRegion -->
+    <span data-bind="html: MinorRegion"></span>,
+    <!-- /ko -->
+    <!-- ko if: LocalityName -->
+    <span data-bind="html: LocalityName"></span>,
+    <!-- /ko -->
+    <!-- ko if: LocalityText -->
+    <br />
+    <span class="linklabel">Locality Notes:</span>
+    <span data-bind="html: LocalityText"></span>
+    <!-- /ko -->
+    <!-- ko if: Latitude || Longitude -->
+    <br />
+    <!-- ko if: Latitude -->
+    <span class="linklabel">Lat:</span>
+    <span data-bind="text: Latitude"></span>,
+    <!-- /ko -->
+    <!-- ko if: Longitude -->
+    <span class="linklabel">Long:</span>
+    <span data-bind="text: Longitude"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: Altitude -->
+    <br />
+    <span class="linklabel">Elevation:</span>
+    <span data-bind="text: Altitude"></span>
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<!-- ko if: HabitatDescription || PlantDescription || Polynomial -->
+<p>
+    <!-- ko if: HabitatDescription -->
+    <span class="linklabel">Habitat:</span>
+    <span data-bind="html: HabitatDescription"></span>
+    <br />
+    <!-- /ko -->
+    <!-- ko if: PlantDescription -->
+    <span class="linklabel">Plant Description:</span>
+    <span data-bind="html: PlantDescription"></span>
+    <br />
+    <!-- /ko -->
+    <!-- ko if: Polynomial -->
+    <span class="linklabel">Polynomial:</span>
+    <span data-bind="html: Polynomial"></span>
+    <br />
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<!-- ko if: $data.Id -->
+<p style="font-size: xx-small;">
+    <span class="linklabel">Report link:</span><br />
+    <a data-bind="attr: { href: $root.projectUrl() + 'record/details/' + Id, target: '_blank'}"><span data-bind="html: $root.projectUrl() + 'record/details/' + Id"></span></a>
+</p>
+<!-- /ko -->
+<hr />

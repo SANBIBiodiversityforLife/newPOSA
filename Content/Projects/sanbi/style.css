@@ -1,0 +1,166 @@
+﻿port url("resources/intro.js-1.0.0/minified/introjs.min.css");
+/*a,a:link,a:visited,a:hover {background-color: transparent; color: #2B60DE;}*/
+/*
+div#titles {
+    color: #000000; 
+	background-color: #FFFFFF;
+	background-image:url('images/titlebg.jpg');
+	background-repeat:repeat-x; 
+	overflow: hidden;
+    -ms-background-size:contain;
+    background-size:contain;
+}*/
+
+/****************************** Homepage Section *********************************/
+#HPmarginLeft {background-color:#3F3F3F; color: #DCDCCC; ;}
+#HPmarginLeft a,#HPmarginLeft a:link,#HPmarginLeft a:visited,#HPmarginLeft a:hover {background-color: transparent; color: #FFFFFF;}
+#HPmarginRight {background-color: #FFFFFF; color: #000000; padding: 1.5em 0}
+#HPmarginRight img {max-width: 100%; padding: 0.5em 0;}
+
+/* Custom styling */
+.nivo-controlNav {margin-top: -20px;}
+
+/* Example: uncomment the following to give an illusion of gaps
+   between content panels until browser window becomes too small */
+/*
+@media screen and (min-width: 992px) {
+	#HPmarginLeft {border-right: #FFFFFF 20px solid; }
+	#HPmarginRight {border-left: #FFFFFF 20px solid; }
+}
+*/
+
+/* Rukaya's code
+.home {
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+} */
+footer {
+  text-align: center;
+}
+.home h1 small, .home h1 {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+}
+.home h1 small {
+    display: block;
+}
+.home h1 {
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+}
+.home h2 {
+  border-bottom: 1px solid #CFCFCF;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+body.home { 
+    background: #FFF url("/Content/Projects/sanbi/images/background-banner.jpg") center 90px no-repeat;
+}
+
+.navbar-static-top {
+  background: #FFF url("/Content/Projects/sanbi/images/banner-eflora.png") 375px 2px no-repeat; 
+  background-size: auto 90%;
+  padding: 20px 0;
+  /*position: relative !important;*/
+}
+
+#titles, #titles img {
+  height: 0px !important;
+  display: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+p.in-header {
+  color: white;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+span#explore-wrapper { 
+  display: block;
+  text-align: center;
+  overflow: auto;
+  margin-bottom: 40px;
+  margin-top: 17px;
+}
+span#explore-wrapper a.btn { 
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+    margin: 5px;
+}
+
+#panel-1174 {
+  top: 90px !important;
+}
+
+ol#main-instructions {
+  margin-top: 25px;
+  padding-left: 0;
+}
+ol#main-instructions li {
+  font-size: 18px;
+  margin: 10px 0 30px 0;
+  list-style-position: inside;
+  padding-right: 20px;
+}
+.video-wrapper h3 { 
+    text-align: center;
+    padding: 0 0 15px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+.video-frame {
+    text-align: center;
+}
+.video-wrapper { 
+    border: 1px solid #CFCFCF;
+    margin: 15px 0;
+    background-color: #EEE;
+    text-align: center;
+    padding: 15px;
+}
+#rss-feeds img {
+    margin: 15px 0;
+}
+#rss-feeds .feed-entry {
+  border-bottom: 1px solid #CFCFCF;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+#rss-feeds h3 small {
+    display: block;
+    padding-top: 10px;
+}
+.home h2.main-heading { font-weight: bold; }
+.flora .article-inner {
+    border: 1px solid #cfcfcf;
+    height: 156px;
+    padding: 10px 0;
+    margin: 10px 10px 10px 0;
+    overflow: auto;
+}
+.flora .article-inner h2 { 
+    margin-top: 5px;
+}
+.flora article figure, .flora article .flora-article-text {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+}
+.flora article .flora-article-text {
+    width: 80%;
+}
+.flora article .flora-article-text h2 {
+    font-size: 20px;
+}
+.flora-content-box {
+    margin: 20px 0;
+    padding-left: 0;
+}

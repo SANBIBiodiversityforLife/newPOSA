@@ -1,0 +1,226 @@
+﻿<h4>
+    <!-- ko if: Family -->
+    <span data-bind="text: Family"></span>
+    <!-- /ko -->
+    <span data-bind="text: Genus" class="plantname"></span>
+    <span data-bind="text: Sp1" class="plantname"></span>
+    <span data-bind="text: Author1"></span>
+    <span data-bind="text: Rank1"></span>
+    <span data-bind="text: Sp2" class="plantname"></span>
+    <span data-bind="text: Author2"></span>
+    <span data-bind="text: Rank2"></span>
+    <span data-bind="text: Sp3" class="plantname"></span>
+    <span data-bind="text: Author3"></span>
+</h4>
+<!-- ko if: SpeciesCitation || TaxStat -->
+<p>
+    <!-- ko if: SpeciesCitation -->
+    <span data-bind="text: SpeciesCitation + ' '"></span>
+    <!-- /ko -->
+    <!-- ko if: TaxStat -->
+    <span data-bind="text: '[' + TaxStat + ']'"></span>
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<div data-bind="foreach: ImageResults, visible: ImageCount" style="margin: 1.5em auto;">
+    <a data-bind="attr: { href: ZoomifyUrl + '?width=800px&height=800px', target: '_blank'}">
+        <div style="max-width: 32%; height: 100px;" class="imagediv" data-bind="css: { istype: IsType }">
+            <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 96%; height: 96%;" />
+        </div>
+    </a>
+</div>
+<div style="clear: both;"></div>
+<p>
+    <!-- ko if: NomNote -->
+    <br />
+    <span class="linklabel">Nomenclature note:</span>
+    <span data-bind="html: NomNote"></span>
+    <!-- /ko -->
+    <!-- ko if: TypeNote -->
+    <br />
+    <span class="linklabel">Type notes:</span>
+    <span data-bind="html: TypeNote"></span>
+    <!-- /ko -->
+    <!-- ko if: Accepted -->
+    <br />
+    <span data-bind="text: '(=' + Accepted + ')'"></span>
+    <!-- /ko -->
+    <!-- ko if: SynCat -->
+    <br />
+    <span class="linklabel">Syn. category:</span>
+    <span data-bind="html: SynCat"></span>
+    <!-- /ko -->
+    <!-- ko if: Syns -->
+    <br />
+    <span class="linklabel">Synonyms:</span>
+    <span data-bind="html: Syns"></span>
+    <!-- /ko -->
+    <!-- ko if: TaxNotes -->
+    <br />
+    <span class="linklabel">Taxa Notes:</span>
+    <span data-bind="html: TaxNotes"></span>
+    <!-- /ko -->
+    <!-- ko if: Weblinks -->
+    <br />
+    <span class="linklabel">Weblinks:</span>
+    <span data-bind="html: Weblinks"></span>
+    <!-- /ko -->
+    <!-- ko if: Habit -->
+    <!--<br />
+    <span class="linklabel">Habit:</span>
+    <span data-bind="html: Diagnostic"></span>-->
+    <!-- /ko -->
+    <!-- ko if: Description -->
+    <br />
+    <span class="linklabel">Description:</span>
+    <span data-bind="html: Description">
+    </span>
+    <!-- /ko -->
+    <!-- ko if: GrowthForm -->
+    <br />
+    <span class="linklabel">Growth Form:</span>
+    <span data-bind="html: GrowthForm"></span>
+    <!-- /ko -->
+    <!-- ko if: Distribution -->
+    <br />
+    <span class="linklabel">Distribution:</span>
+    <span data-bind="html: Distribution">
+    </span>
+    <!-- /ko -->
+    <!-- ko if: TDWG -->
+    <br />
+    <span class="linklabel">TDWG:</span>
+    <span data-bind="html: TDWG"></span>
+    <!-- /ko -->
+    <!-- ko if: Star -->
+    <br />
+    <span class="linklabel">Star rating:</span>
+    <span data-bind="html: Star"></span>
+    <!-- /ko -->
+    <!-- ko if: Criteria || IUCN -->
+    <br />
+    <!-- ko if: IUCN -->
+    <span class="linklabel">IUCN:</span>
+    <span data-bind="text: IUCN"></span>
+    <!-- /ko -->
+    <!-- ko if: Criteria -->
+    <span class="linklabel">Criteria:</span>
+    <span data-bind="text: Criteria"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: Conservation -->
+    <br />
+    <span class="linklabel">Conservation:</span>
+    <span data-bind="html: Conservation">
+    </span>
+    <!-- /ko -->
+    <!-- ko if: Diagnostic -->
+    <br />
+    <span class="linklabel">Habit:</span>
+    <span data-bind="html: Diagnostic"></span>
+    <!-- /ko -->
+    <!-- ko if: Dispersal -->
+    <br />
+    <span class="linklabel">Dispersal:</span>
+    <span data-bind="html: Dispersal"></span>
+    <!-- /ko -->
+    <!-- ko if: Ecology -->
+    <br />
+    <span class="linklabel">SA:</span>
+    <span data-bind="html: Ecology"></span>
+    <!-- /ko -->
+    <!-- ko if: Etymology -->
+    <br />
+    <span class="linklabel">Etymology:</span>
+    <span data-bind="html: Etymology"></span>
+    <!-- /ko -->
+    <!-- ko if: Phenology -->
+    <br />
+    <span class="linklabel">Phenology:</span>
+    <span data-bind="html: Phenology"></span>
+    <!-- /ko -->
+    <!-- ko if: Pollination -->
+    <br />
+    <span class="linklabel">Pollination:</span>
+    <span data-bind="html: Pollination">
+    </span>
+    <!-- /ko -->
+    <!-- ko if: SpecimenList -->
+    <br />
+    <span class="linklabel">Specimen List:</span>
+    <span data-bind="html: SpecimenList">
+    </span>
+    <!-- /ko -->
+    <!-- ko if: Uses -->
+    <br />
+    <span class="linklabel">Uses:</span>
+    <span data-bind="html: Uses"></span>
+    <!-- /ko -->
+    <!-- ko if: FamilyVernacular -->
+    <br />
+    <span class="linklabel">Family Vernacular:</span>
+    <span data-bind="html: FamilyVernacular"></span>
+    <!-- /ko -->
+    <!-- ko if: Biblio -->
+    <br />
+    <span class="linklabel">Bibliography:</span>
+    <span data-bind="html: Biblio"></span>
+    <!-- /ko -->
+    <!-- ko if: Notes -->
+    <br />
+    <span class="linklabel">General Notes:</span>
+    <span data-bind="html: Notes"></span>
+    <!-- /ko -->
+    <!-- ko if: Hardiness -->
+    <br />
+    <span class="linklabel">Hardiness/Zone:</span>
+    <span data-bind="html: Hardiness"></span>
+    <!-- /ko -->
+    <!-- ko if: Water -->
+    <br />
+    <span class="linklabel">Water requirement:</span>
+    <span data-bind="html: Water"></span>
+    <!-- /ko -->
+    <!-- ko if: Expose -->
+    <br />
+    <span class="linklabel">Shade tolerance:</span>
+    <span data-bind="html: Expose"></span>
+    <!-- /ko -->
+    <!-- ko if: Colour -->
+    <br />
+    <span class="linklabel">Flower Colour:</span>
+    <span data-bind="html: Colour"></span>
+    <!-- /ko -->
+    <!-- ko if: BloomTime -->
+    <br />
+    <span class="linklabel">Flowering Time:</span>
+    <span data-bind="html: BloomTime"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantSize -->
+    <br />
+    <span class="linklabel">Plant Size:</span>
+    <span data-bind="html: PlantSize"></span>
+    <!-- /ko -->
+    <!-- ko if: LabelRange -->
+    <br />
+    <span class="linklabel">Species Range:</span>
+    <span data-bind="html: LabelRange"></span>
+    <!-- /ko -->
+    <!-- ko if: Ornamental -->
+    <br />
+    <span class="linklabel">Ornamental Characteristics:</span>
+    <span data-bind="html: Ornamental"></span>
+    <!-- /ko -->
+    <!-- ko if: SoilType -->
+    <br />
+    <span class="linklabel">Soil Type:</span>
+    <span data-bind="html: SoilType"></span>
+    <!-- /ko -->
+</p>
+<!-- ko if: $data.Id -->
+<p style="font-size: xx-small;">
+    <span class="linklabel">Report link:</span><br />
+    <a data-bind="attr: { href: $root.projectUrl() + 'record/details/' + Id, target: '_blank'}"><span data-bind="html: $root.projectUrl() + 'record/details/' + Id"></span></a>
+</p>
+<!-- /ko -->
+<hr />

@@ -1,0 +1,76 @@
+﻿<h4>
+    <!-- ko if: Family -->
+    <span data-bind="text: Family"></span>
+    <!-- /ko -->
+    <span data-bind="text: Genus" class="plantname"></span>
+    <span data-bind="text: Sp1" class="plantname"></span>
+    <span data-bind="text: Sp2" class="plantname"></span>
+    <span data-bind="text: Sp3" class="plantname"></span>
+    <!-- ko if: AccessionNumber -->
+    [Accession No: <span data-bind="text: AccessionNumber"></span>]
+    <!-- /ko -->
+</h4>
+<div data-bind="foreach: ImageResults, visible: ImageCount" style="margin: 2em;">
+    <a data-bind="attr: { href: ZoomifyUrl + '?width=800px&height=800px', target: '_blank'}">
+        <div style="max-width:32%;height:100px;" class="imagediv" data-bind="css: { istype: IsType }">
+            <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 96%;height: 96%;" />
+        </div>
+    </a>
+</div>
+<div style="clear: both;"></div>
+<p>
+    <!-- ko if: Subcollection -->
+    <br />
+    <span class="linklabel">Subcollection:</span> <span data-bind="text: Subcollection"></span>
+    <!-- /ko -->
+    <!-- ko if: ProjectName -->
+    <br />
+    <span class="linklabel">Project:</span> <span data-bind="text: ProjectName"></span>
+    <!-- /ko -->
+    <!-- ko if: DonorRef -->
+    <br />
+    <span class="linklabel">Donor Reference:</span> <span data-bind="text: DonorRef"></span>
+    <!-- /ko -->
+    <!-- ko if: BrahmsGermTestId -->
+    <br />
+    <span class="linklabel">Germination Test Id:</span> <span data-bind="text: BrahmsGermTestId"></span>
+    <!-- /ko -->
+    <!-- ko if: DateStarted -->
+    <br />
+    <span class="linklabel">Date Started (y-m-d):</span> <span data-bind="text: DateStarted"></span>
+    <!-- /ko -->
+    <!-- ko if: TestNotes -->
+    <br />
+    <span class="linklabel">Test Notes:</span> <span data-bind="html: TestNotes"></span>
+    <!-- /ko -->
+    <!-- ko if: Interval -->
+    <br />
+    <span class="linklabel">Interval:</span> <span data-bind="text: Interval"></span>
+    <!-- /ko -->
+    <!-- ko if: InspectionInterval -->
+    <br />
+    <span class="linklabel">Inspection Interval:</span> <span data-bind="text: InspectionInterval"></span>
+    <!-- /ko -->
+    <!-- ko if: StepSummary -->
+    <br />
+    <span class="linklabel">Step Summary:</span> <span data-bind="html: StepSummary"></span>
+    <!-- /ko -->
+    <br />
+    Full: <span data-bind="text: Full" class="linklabel"></span>, Empty: <span data-bind=" text Empty" class="linklabel"></span>,
+    Infested: <span data-bind="text: Infested" class="linklabel"></span>, Abnormal: <span data-bind=" text Abnormal" class="linklabel"></span>,
+    Mouldy: <span data-bind="text: Mouldy" class="linklabel"></span>, Rate: <span data-bind=" text Rate" class="linklabel"></span> %.
+    <br /><br />
+    No. Sown: <span data-bind="text: NumSown" class="linklabel"></span>, No. Unusable: <span data-bind="text: Unusable" class="linklabel"></span>,
+    No. Germinated: <span data-bind="text: NumGerm" class="linklabel"></span>, Result: <span data-bind="text: Result" class="linklabel"></span> %
+    <!-- ko if: Accepted && PassFail -->
+    <br />
+    Accepted: <span data-bind="text: Accepted" class="linklabel"></span>, Pass/Fail: <span data-bind="text: PassFail" class="linklabel"></span>
+    <!-- /ko -->
+</p>
+<!-- ko if: $data.Id -->
+<p style="font-size: xx-small;">
+    <span class="linklabel">Report link:</span><br />
+    <a data-bind="attr: { href: $root.projectUrl() + 'record/details/' + Id, target: '_blank'}"><span data-bind="html: $root.projectUrl() + 'record/details/' + Id"></span></a>
+</p>
+<!-- /ko -->
+<hr />

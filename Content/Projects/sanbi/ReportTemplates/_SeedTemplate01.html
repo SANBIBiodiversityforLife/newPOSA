@@ -1,0 +1,248 @@
+﻿<h4>
+    <!-- ko if: Family -->
+    <span data-bind="text: Family"></span>
+    <!-- /ko -->
+    <span data-bind="text: Genus" class="plantname"></span>
+    <span data-bind="text: Sp1" class="plantname"></span>
+    <span data-bind="text: Author1"></span>
+    <span data-bind="text: Rank1"></span>
+    <span data-bind="text: Sp2" class="plantname"></span>
+    <span data-bind="text: Author2"></span>
+    <span data-bind="text: Rank2"></span>
+    <span data-bind="text: Sp3" class="plantname"></span>
+    <span data-bind="text: Author3"></span>
+</h4>
+<!-- ko if: SpeciesCitation || TaxStat -->
+<p>
+    <!-- ko if: SpeciesCitation -->
+    <span data-bind="text: SpeciesCitation + ' '"></span>
+    <!-- /ko -->
+    <!-- ko if: TaxStat -->
+    <span data-bind="text: '[' + TaxStat + ']'"></span>
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<div data-bind="foreach: ImageResults, visible: ImageCount" style="margin: 2em;">
+    <a data-bind="attr: { href: ZoomifyUrl + '?width=800px&height=800px', target: '_blank'}">
+        <div style="max-width:32%;height:100px;" class="imagediv" data-bind="css: { istype: IsType }">
+            <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 96%;height: 96%;" />
+        </div>
+    </a>
+</div>
+<div style="clear: both;"></div>
+<p>
+    <!-- ko if: AccessionNumber -->
+    <br />
+    <span class="linklabel">Accession No:</span> <span data-bind="text: AccessionNumber"></span>
+    <!-- /ko -->
+    <!-- ko if: BatchId -->
+    <br />
+    <span class="linklabel">Batch Id:</span> <span data-bind="text: BatchId"></span>
+    <!-- /ko -->
+    <br />
+    <span class="linklabel">Transfer to History:</span> <span data-bind="text: TransferToHistory"></span>
+    <!-- ko if: Subcollection -->
+    <br />
+    <span class="linklabel">Subcollection:</span> <span data-bind="text: Subcollection"></span>
+    <!-- /ko -->
+    <!-- ko if: ProjectName -->
+    <br />
+    <span class="linklabel">Project:</span> <span data-bind="text: ProjectName"></span>
+    <!-- /ko -->
+    <!-- ko if: DonorOrg -->
+    <br />
+    <span class="linklabel">Donor Org:</span> <span data-bind="text: DonorOrg"></span>
+    <!-- /ko -->
+    <!-- ko if: DonorRef -->
+    <br />
+    <span class="linklabel">Donor Reference:</span> <span data-bind="text: DonorRef"></span>
+    <!-- /ko -->
+    <!-- ko if: DateDonated -->
+    <br />
+    <span class="linklabel">Date Donated (y-m-d):</span> <span data-bind="text: DateDonated"></span>
+    <!-- /ko -->
+    <!-- ko if: DateSupplied -->
+    <br />
+    <span class="linklabel">Date Supplied(y-m-d):</span> <span data-bind="text: DateSupplied"></span>
+    <!-- /ko -->
+    <!-- ko if: DataProvidedBy -->
+    <br />
+    <span class="linklabel">Data Provided By:</span> <span data-bind="html: DataProvidedBy"></span>
+    <!-- /ko -->
+    <!-- ko if: FullNumber -->
+    <br />
+    <span class="linklabel">Collection Number:</span> <span data-bind="text: FullNumber"></span>
+    <!-- ko if: PrincipalCollector -->
+    <br />
+    <span class="linklabel">Collected By:</span> <span data-bind="text: PrincipalCollector"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: CountryName -->
+    <br />
+    <span class="linklabel">Country:</span> <span data-bind="text: CountryName"></span>;
+    <!-- ko if: MajorRegion -->
+    <span data-bind="text: MajorRegion"></span>;
+    <!-- /ko -->
+    <!-- ko if: MinorRegion -->
+    <span data-bind="text: MinorRegion"></span>;
+    <!-- /ko -->
+    <!-- ko if: LocalityName -->
+    <span data-bind="text: LocalityName"></span>;
+    <!-- /ko -->
+    <!-- ko if: LocalityText -->
+    <span data-bind="html: LocalityText"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: Latitude -->
+    <br />
+    <span class="linklabel">Latitude (Decimal):</span> <span data-bind="html: Latitude"></span>
+    <!-- ko if: Longitude -->
+    <span class="linklabel">Longitude (Decimal):</span> <span data-bind="html: Longitude"></span>
+    <!-- /ko -->
+    <!-- ko if: MethodLatLong -->
+    <span class="linklabel">Method (lat/lng):</span> <span data-bind="html: MethodLatLong"></span>
+    <!-- /ko -->
+    <!-- ko if: GPSDatum -->
+    <span class="linklabel">GPS Datum:</span> <span data-bind="html: GPSDatum"></span>
+    <!-- /ko -->
+    <!-- ko if: Altitude -->
+    <br />
+    <span class="linklabel">Altitude:</span> <span data-bind="html: Altitude"></span>
+    <!-- ko if: MethodAltitude -->
+    (<span class="linklabel">Method (alt.):</span> <span data-bind="html: MethodAltitude"></span>)
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: SoilTexture -->
+    <br />
+    <span class="linklabel">Soil Texture:</span> <span data-bind="html: SoilTexture"></span>
+    <!-- /ko -->
+    <!-- ko if: Geology -->
+    <br />
+    <span class="linklabel">Geology:</span> <span data-bind="html: Geology"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantForm -->
+    <br />
+    <span class="linklabel">Plant Form:</span> <span data-bind="html: PlantForm"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantHeight -->
+    <br />
+    <span class="linklabel">Plant Height:</span> <span data-bind="html: PlantHeight"></span> m.
+    <!-- /ko -->
+    <!-- ko if: PlantDescription -->
+    <br />
+    <span class="linklabel">Plant Description:</span> <span data-bind="html: PlantDescription"></span>
+    <!-- /ko -->
+    <!-- ko if: AreaSampled -->
+    <br />
+    <span class="linklabel">Area Sampled:</span> <span data-bind="html: AreaSampled"></span>
+    <!-- /ko -->
+    <!-- ko if: SiteNotes -->
+    <br />
+    <span class="linklabel">Site Notes:</span> <span data-bind="html: SiteNotes"></span>
+    <!-- /ko -->
+    <!-- ko if: NumberPlantsLocated -->
+    <br />
+    <span class="linklabel">Number of Plants Located:</span> <span data-bind="html: NumberPlantsLocated"></span>
+    <!-- /ko -->
+    <!-- ko if: NumberPlantsSampled -->
+    <br />
+    <span class="linklabel">Number of Plants Sampled:</span> <span data-bind="html: NumberPlantsSampled"></span>
+    <!-- /ko -->
+    <!-- ko if: SampleNotes -->
+    <br />
+    <span class="linklabel">Sample Notes:</span> <span data-bind="html: SampleNotes"></span>
+    <!-- /ko -->
+    <!-- ko if: Verifier -->
+    <br />
+    <span class="linklabel">Verifier:</span> <span data-bind="text: Verifier"></span>
+    <!-- ko if: DateVerified -->
+    <br />
+    <span class="linklabel">Date Verified (y-m-d):</span> <span data-bind="text: DateVerified"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: MaterialUsedForDetermination -->
+    <br />
+    <span class="linklabel">Material Used For Determination:</span> <span data-bind="text: MaterialUsedForDetermination"></span>
+    <!-- /ko -->
+    <!-- ko if: GermplasmType -->
+    <br />
+    <span class="linklabel">Germplasm Type:</span> <span data-bind="html: GermplasmType"></span>
+    <!-- /ko -->
+    <!-- ko if: DateGermplasmBanked -->
+    <br />
+    <span class="linklabel">Date Germplasm Banked (y-m-d):</span> <span data-bind="text: DateGermplasmBanked"></span>
+    <!-- /ko -->
+    <!-- ko if: MonitoringPeriod -->
+    <br />
+    <span class="linklabel">Monitoring Period:</span> <span data-bind="html: MonitoringPeriod"></span>
+    <!-- /ko -->
+    <!-- ko if: ThousandSeedWeight -->
+    <br />
+    <span class="linklabel">Thousand Seed Weight:</span> <span data-bind="html: ThousandSeedWeight"></span> g.
+    <!-- /ko -->
+    <!-- ko if: OriginalSeedQuantity -->
+    <br />
+    <span class="linklabel">Original Seed Quantity:</span> <span data-bind="html: OriginalSeedQuantity"></span>
+    <!-- /ko -->
+    <!-- ko if: CurrentSeedQuantity -->
+    <br />
+    <span class="linklabel">Current Seed Quantity:</span> <span data-bind="html: CurrentSeedQuantity"></span>
+    <!-- /ko -->
+    <!-- ko if: AdjustedSeedQuantity -->
+    <br />
+    <span class="linklabel">Adjusted Seed Quantity:</span> <span data-bind="html: AdjustedSeedQuantity"></span>
+    <!-- /ko -->
+    <!-- ko if: MethodSeedNumDetermined -->
+    <br />
+    <span class="linklabel">Seed Number Determination Method:</span> <span data-bind="html: MethodSeedNumDetermined"></span>
+    <!-- /ko -->
+    <!-- ko if: NumXRayed -->
+    <br />
+    <span class="linklabel">Seed Number X-Rayed:</span> <span data-bind="html: NumXRayed"></span>
+    <!-- /ko -->
+    <!-- ko if: XRayDate -->
+    <br />
+    <span class="linklabel">X-Ray Date (y-m-d):</span> <span data-bind="text: XRayDate"></span>
+    <!-- /ko -->
+    <!-- ko if: KV -->
+    <br />
+    <span class="linklabel">X-Ray Energy (kV):</span> <span data-bind="html: KV"></span>
+    <!-- ko if: Seconds -->
+    <span class="linklabel"> for:</span> <span data-bind="html: Seconds"></span> sec.
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: NumEmptyXRay -->
+    <br />
+    <span class="linklabel">Number Empty (X-Ray):</span> <span data-bind="html: NumEmptyXRay"></span>
+    <!-- /ko -->
+    <!-- ko if: NumPartFilledXRay -->
+    <br />
+    <span class="linklabel">Number Part-filled (X-Ray):</span> <span data-bind="html: NumPartFilledXRay"></span>
+    <!-- /ko -->
+    <!-- ko if: NumInfestedXRay -->
+    <br />
+    <span class="linklabel">Number Infested (X-Ray):</span> <span data-bind="html: NumInfestedXRay"></span>
+    <!-- /ko -->
+    <!-- ko if: NumOKXRay -->
+    <br />
+    <span class="linklabel">Number Ok (X-Ray):</span> <span data-bind="html: NumOKXRay"></span>
+    <!-- /ko -->
+    <!-- ko if: Viability -->
+    <br />
+    <span class="linklabel">Viability (%):</span> <span data-bind="html: Viability"></span>
+    <!-- /ko -->
+    <br />
+    <span class="linklabel">Cut Tested?:</span> <span data-bind="text: CutTestFlag ? 'Yes' : 'No'"></span>
+    <!-- ko if: DistributionPolicy -->
+    <br />
+    <span class="linklabel">Distribution Policy:</span> <span data-bind="html: DistributionPolicy"></span>
+    <!-- /ko -->
+</p>
+<!-- ko if: $data.Id -->
+<p style="font-size: xx-small;">
+    <span class="linklabel">Report link:</span><br />
+    <a data-bind="attr: { href: $root.projectUrl() + 'record/details/' + Id, target: '_blank'}"><span data-bind="html: $root.projectUrl() + 'record/details/' + Id"></span></a>
+</p>
+<!-- /ko -->
+<hr />

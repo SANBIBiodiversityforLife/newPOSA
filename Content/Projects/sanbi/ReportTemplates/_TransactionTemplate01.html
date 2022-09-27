@@ -1,0 +1,87 @@
+﻿
+<div style="padding: 1.5em;line-height: 1.5em;">
+    <div data-bind="foreach: ImageResults, visible: ImageCount" style="margin-left: 20px; float: right; max-width: 400px; -moz-min-width: 200px; -ms-min-width:
+
+200px; -o-min-width: 200px; -webkit-min-width: 200px; min-width: 200px">
+        <!-- ko if: $parent.TypeCategory -->
+        <div style="width:170px; height: 240px; border: 1px solid black; padding: 7px 5px; text-align: center;font-size: 0.86em;" class="istype">
+            <a data-bind="attr: { href: ZoomifyUrl + '?fs=1', target: '_blank'}">
+                <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 100%; height: 80%;" />
+            </a>
+            <br />
+            Click on image to zoom or <a data-bind="attr: { href: ImageUrl, target: '_blank' }, style: { color: 'blue', textDecoration: 'underline'}">
+                here for
+
+                default image
+            </a>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: !$parent.TypeCategory -->
+        <div style="width:170px; height: 240px; border: 1px solid black; padding: 7px 5px; text-align: center;font-size: 0.86em;">
+            <a data-bind="attr: { href: ZoomifyUrl + '?fs=1', target: '_blank'}">
+                <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 100%; height: 80%;" />
+            </a>
+            <br />
+            Click on image to zoom or <a data-bind="attr: { href: ImageUrl, target: '_blank' }, style: { color: 'blue', textDecoration: 'underline'}">
+                here for
+
+                default image
+            </a>
+        </div>
+        <!-- /ko -->
+    </div>
+    <!-- ko if: !$index() || CollectionId !== $root.reportData()[$index()-1].CollectionId -->
+    <p data-bind="html: Summary"></p>
+    <!-- /ko -->
+    <span data-bind="text:'Herbarium Code: ' + Herbarium" class="linklabel" style="font-size:1.1em;"></span>
+    <!-- ko if: TypeCategory -->
+    <br />
+    <span class="linklabel">Type Category:</span> <span data-bind="text: TypeCategory"></span>
+    <!-- /ko -->
+    <!-- ko if: TypeFamily -->
+    <br />
+    <span class="linklabel">Type Family:</span> <span data-bind="text: TypeFamily"></span>
+    <!-- /ko -->
+    <!-- ko if: TypeTaxon -->
+    <br />
+    <span class="linklabel">Type Taxon:</span> <span data-bind="html: '<em>'+TypeTaxon+'</em>'"></span>
+    <!-- /ko -->
+    <!-- ko if: Polynomial -->
+    <br />
+    <span class="linklabel">Polynomial:</span> <span data-bind="text: Polynomial"></span>
+    <!-- /ko -->
+    <!-- ko if: Category -->
+    <br />
+    <span class="linklabel">Category:</span> <span data-bind="text: Category"></span>
+    <!-- /ko -->
+    <!-- ko if: Barcode -->
+    <br />
+    <span class="linklabel">Barcode:</span> <span data-bind="text: Barcode"></span>
+    <!-- /ko -->
+    <!-- ko if: AccessionNumber -->
+    <br />
+    <span class="linklabel">Accession Number:</span> <span data-bind="text: AccessionNumber"></span>
+    <!-- /ko -->
+    <!-- ko if: Weblinks -->
+    <br />
+    <span class="linklabel">Type URL:</span> <span data-bind="html: Weblinks"></span>
+    <!-- /ko -->
+    <!-- ko if: Genbank -->
+    <br />
+    <span class="linklabel">Genbank URL:</span> <span data-bind="html: Genbank"></span>
+    <!-- /ko -->
+    <!-- ko if: DetSummary -->
+    <br />
+    <span class="linklabel">Det Summary:</span> <span data-bind="html: DetSummary"></span>
+    <!-- /ko -->
+    <!-- ko if: BrahmsSpecimenCode -->
+    <br />
+    <span class="linklabel">BRAHMS Specimen Id:</span> <span data-bind="text: BrahmsSpecimenCode"></span>
+    <br />
+    <span class="linklabel">BRAHMS Online URL:</span> <a data-bind="attr: { href:  $root.projectUrl() + DatabaseId + '/Specimen/Record/' + BrahmsSpecimenCode,
+
+target: '_blank' }, text: $root.projectUrl() + DatabaseId + '/Specimen/Record/' + BrahmsSpecimenCode"></a>
+    <!-- /ko -->
+</div>
+<div style="clear: both;"></div>
+<hr />

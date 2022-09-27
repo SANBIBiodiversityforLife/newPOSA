@@ -1,0 +1,43 @@
+﻿{
+    defaultMapDataLimit:  2000, // Number of records for map display: range 1000 - 30000, default 5000
+
+  // Left hand tree view visibility and search field labels/help text for empty search box
+  // note: the taxa tree view cannot be hidden and adding showTaxaTree: false would be ignored
+  "taxaTreeTitle": "Taxa", // default "Taxa"
+  "taxaTreeFilterFieldLabel": "Species Search", // default "Species Search"
+  "taxaTreeFilterEmptyText": "Enter Genus + Species...", // default "Enter Genus + Species..."
+  taxaTreeRootText: "Families", // default "Families"
+
+  showCharactersTree: false, // turn characters tree view display on/off - default false
+  "charactersTreeTitle": "Species Characters", // default "Species Characters"
+  "charactersTreeFilterFieldLabel": "Search Term", // default "Search Term"
+  "charactersTreeFilterEmptyText": "Enter keyword...", // default "Enter keyword..."
+  charactersTreeRootText: "All", // default "All"
+
+  showPlacesTree: true, // turn geo tree view display on/off - default true
+  "placesTreeTitle": "Geography", // default "Geography"
+  "placesTreeFilterFieldLabel": "Geo Search", // default "Geo Search"
+  "placesTreeFilterEmptyText": "Enter country...", // default "Enter country..."
+  placesTreeRootText: "Countries", // default "Countries"
+
+  showCollectorsTree: true, // turn collectors tree view display on/off - default true
+  "collectorsTreeTitle": "Collectors", // default "Collectors"
+  "collectorsTreeFilterFieldLabel": "Collector", // default "Collector",
+  "collectorsTreeFilterEmptyText": "Enter collector surname...", // default "Enter collector surname..."
+  collectorsTreeRootText: "Collectors", // default "Collectors"
+
+  // Available DataRecordViewTypes are: 'TaxonRecordView' (default),'BotanicalRecordView', 'SpecimenRecordView', 'SeedAccessionRecordView', 'SeedTestRecordView', 'LivingRecordView', 'PlotHeaderRecordView'
+  defaultTextRecordViewDataType: "TaxonRecordView", 
+
+  // substitute names for the drop down list of text grid data view types: {DataType: "DataRecordViewType", Title: "SubstituteName"}
+  dataTypeNameSubstitutions: [
+    { DataType: "TaxonRecordView", Title: "Taxa"}, // default "Taxa"
+    { DataType: "BotanicalRecordView", Title: "Botanical Records" }, // default "Botanical Records"
+    { DataType: "SpecimenRecordView", Title: "Specimens" }, // default "Specimens"
+    { DataType: "SeedAccessionRecordView", Title: "Seed Accessions" }, // default "Seed Accessions"
+    { DataType: "SeedTestRecordView", Title: "Germination Tests" }, // default "Germination Tests"
+    { DataType: "LivingRecordView", Title: "Living Collections" }, // default "Living Collections"
+    { DataType: "PlotHeaderRecordView", Title: "Plot Headers" } // default "Plot Headers"
+  ]
+
+}

@@ -1,0 +1,163 @@
+﻿<h4>
+    <!-- ko if: Family -->
+    <span data-bind="text: Family"></span>
+    <!-- /ko -->
+    <span data-bind="text: Genus" class="plantname"></span>
+    <span data-bind="text: Sp1" class="plantname"></span>
+    <span data-bind="text: Author1"></span>
+    <span data-bind="text: Rank1"></span>
+    <span data-bind="text: Sp2" class="plantname"></span>
+    <span data-bind="text: Author2"></span>
+    <span data-bind="text: Rank2"></span>
+    <span data-bind="text: Sp3" class="plantname"></span>
+    <span data-bind="text: Author3"></span>
+</h4>
+<!-- ko if: SpeciesCitation || TaxStat -->
+<p>
+    <!-- ko if: SpeciesCitation -->
+    <span data-bind="text: SpeciesCitation + ' '"></span>
+    <!-- /ko -->
+    <!-- ko if: TaxStat -->
+    <span data-bind="text: '[' + TaxStat + ']'"></span>
+    <!-- /ko -->
+</p>
+<!-- /ko -->
+<div data-bind="foreach: ImageResults, visible: ImageCount" style="margin: 2em;">
+    <a data-bind="attr: { href: ZoomifyUrl + '?width=800px&height=800px', target: '_blank'}">
+        <div style="max-width:32%;height:100px;" class="imagediv" data-bind="css: { istype: IsType }">
+            <img data-bind="attr: { src: ThumbUrl, alt: ImageFile, title: Taxon }" style="max-width: 96%;height: 96%;" />
+        </div>
+    </a>
+</div>
+<div style="clear: both;"></div>
+<p>
+    <!-- ko if: Accession -->
+    <br />
+    <span class="linklabel">Accession:</span> <span data-bind="text: Accession"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantNumber -->
+    <br />
+    <span class="linklabel">Plant ID:</span> <span data-bind="text: PlantNumber"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantedDD -->
+    <br />
+    <span class="linklabel">Day Planted:</span> <span data-bind="text: PlantedDD"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantedMM -->
+    <br />
+    <span class="linklabel">Month Planted:</span> <span data-bind="text: PlantedMM"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantedYY -->
+    <br />
+    <span class="linklabel">Year Planted:</span> <span data-bind="text: PlantedYY"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenCode -->
+    <br />
+    <span class="linklabel">Garden Code:</span> <span data-bind="text: GardenCode"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenSubarea -->
+    <br />
+    <span class="linklabel">Sub-area:</span> <span data-bind="text: GardenSubarea"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenBed -->
+    <br />
+    <span class="linklabel">Bed:</span> <span data-bind="text: GardenBed"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenSequence -->
+    <br />
+    <span class="linklabel">Sequence:</span> <span data-bind="text: GardenSequence"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenGrid -->
+    <br />
+    <span class="linklabel">Grid:</span> <span data-bind="text: GardenGrid"></span>
+    <!-- /ko -->
+    <!-- ko if: GardenSubGrid -->
+    <br />
+    <span class="linklabel">Sub-Grid:</span> <span data-bind="text: GardenSubGrid"></span>
+    <!-- /ko -->
+    <!-- ko if: BgCode -->
+    <br />
+    <span class="linklabel">Bot. Gdn Code:</span> <span data-bind="text: BgCode"></span>
+    <!-- /ko -->
+    <!-- ko if: BgZone -->
+    <br />
+    <span class="linklabel">Bot. Gdn Zone:</span> <span data-bind="text: BgZone"></span>
+    <!-- /ko -->
+    <!-- ko if: BgLocation -->
+    <br />
+    <span class="linklabel">Bot. Gdn Location:</span> <span data-bind="text: BgLocation"></span>
+    <!-- /ko -->
+    <!-- ko if: BgLocNotes -->
+    <br />
+    <span class="linklabel">Bot. Gdn Location Notes:</span> <span data-bind="text: BgLocNotes"></span>
+    <!-- /ko -->
+    <!-- ko if: LivingCollectionStatus -->
+    <br />
+    <br />
+    <span class="linklabel">Living Collection Status:</span> <span data-bind="text: LivingCollectionStatus"></span>
+    <!-- /ko -->
+    <!-- ko if: LivingCollectionSex -->
+    <br />
+    <span class="linklabel">Living Collection Sex:</span> <span data-bind="text: LivingCollectionSex"></span>
+    <!-- /ko -->
+    <!-- ko if: IPEN -->
+    <br />
+    <span class="linklabel">IPEN:</span> <span data-bind="text: IPEN"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantDescription -->
+    <br />
+    <span class="linklabel">Plant Description:</span> <span data-bind="text: PlantDescription"></span>
+    <!-- /ko -->
+    <!-- ko if: CountryName -->
+    <br />
+    <span class="linklabel">Country of Origin:</span> <span data-bind="text: CountryName"></span>
+    <!-- ko if: MajorRegion-->
+    <span class="linklabel">, Origin Major:</span> <span data-bind="text: MajorRegion"></span>
+    <!-- /ko -->
+    <!-- ko if: MinorRegion -->
+    <span class="linklabel">, Origin Minor:</span> <span data-bind="text: MinorRegion"></span>
+    <!-- /ko -->
+    <!-- ko if: LocalityName -->
+    <span class="linklabel">, Origin Locality:</span> <span data-bind="text: LocalityName"></span>
+    <!-- /ko -->
+    <!-- ko if: LocalityText -->
+    <br />
+    <span class="linklabel">Origin Locality Notes:</span> <span data-bind="text: LocalityText"></span>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: HabitatDescription -->
+    <br />
+    <span class="linklabel">Habitat:</span> <span data-bind="text: HabitatDescription"></span>
+    <!-- /ko -->
+    <!-- ko if: OriginStatus -->
+    <br />
+    <span class="linklabel">Origin Status:</span> <span data-bind="text: OriginStatus"></span>
+    <!-- /ko -->
+    <!-- ko if: OriginNote -->
+    <br />
+    <span class="linklabel">Origin Note:</span> <span data-bind="text: OriginNote"></span>
+    <!-- /ko -->
+    <!-- ko if: ProvenanceType -->
+    <br />
+    <span class="linklabel">Provenance Type:</span> <span data-bind="text: ProvenanceType"></span>
+    <!-- /ko -->
+    <!-- ko if: ProvenanceHistory -->
+    <br />
+    <span class="linklabel">Provenance History:</span> <span data-bind="text: ProvenanceHistory"></span>
+    <!-- /ko -->
+    <!-- ko if: Commemoration -->
+    <br />
+    <span class="linklabel">Commemoration Summary:</span> <span data-bind="html: Commemoration"></span>
+    <!-- /ko -->
+    <!-- ko if: PlantComments -->
+    <br />
+    <span class="linklabel">Plant Comments:</span> <span data-bind="html: PlantComments"></span>
+    <!-- /ko -->
+</p>
+<!-- ko if: $data.Id -->
+<p style="font-size: xx-small;">
+    <span class="linklabel">Report link:</span><br />
+    <a data-bind="attr: { href: $root.projectUrl() + 'record/details/' + Id, target: '_blank'}"><span data-bind="html: $root.projectUrl() + 'record/details/' + Id"></span></a>
+</p>
+<!-- /ko -->
+<hr />

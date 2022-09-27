@@ -1,0 +1,39 @@
+﻿<!-- ko if: Herbaria.length > 0 -->
+<h4 style="text-decoration: underline">Location of Herbarium Duplicates</h4>
+<div data-bind="foreach: Herbaria" style="margin-bottom: 2.6em;">
+    <span data-bind="text: Herbarium"></span>; 
+</div>
+<!-- /ko -->
+<!-- ko if: HabitatDescriptions.length > 0 -->
+<h4 style="text-decoration: underline">Habitat Descriptions</h4> 
+<div data-bind="foreach: HabitatDescriptions" style="margin-bottom: 2.6em;">
+    <p><span data-bind="text: '(' + PrincipalCollector + ' ' + FullNumber + ')', css: 'linklabel'"></span> <span data-bind="html: HabitatDescription"></span></p>
+</div>
+<!-- /ko -->
+<!-- ko if: PlantDescriptions.length > 0 -->
+<h4 style="text-decoration: underline">Plant Descriptions</h4>
+<div data-bind="foreach: PlantDescriptions" style="margin-bottom: 2.6em;">
+    <p><span data-bind="text: '(' + PrincipalCollector + ' ' + FullNumber + ')', css: 'linklabel'"></span> <span data-bind="html: PlantDescription"></span></p>
+</div>
+<!-- /ko -->
+<!-- ko if: WeblinkUrls.length > 0 -->
+<h4 style="text-decoration: underline">Type URL's</h4>
+<div data-bind="foreach: WeblinkUrls" style="margin-bottom: 2.6em;">
+    <p><span data-bind="text: '(' + Herbarium + ': ' + OriginalSpecimenId + ')', css: 'linklabel'"></span>
+    <br /> 
+    <span data-bind="html: Weblinks" style="display: inline-block;margin-left: 2em;"></span></p>
+</div>
+<!-- /ko -->
+<!-- ko if: GenbankUrls.length > 0 -->
+<h4 style="text-decoration: underline">Genbank URL's</h4>
+<div data-bind="foreach: GenbankUrls">
+    <p><span data-bind="text: '(' + Herbarium + ': ' + OriginalSpecimenId + ')', css: 'linklabel'"></span>
+    <br />
+    <span data-bind="html: Genbank" style="display: inline-block;margin-left: 2em;"></span></p>
+</div>
+<!-- /ko -->
+
+<!-- ko ifnot: (Herbaria.length || HabitatDescriptions.length || PlantDescriptions.length || WeblinkUrls.length || GenbankUrls.length)  > 0 -->
+<h4 class="linklabel">Not Available</h4>
+<p>Specimen summary data is not available for this record</p>
+<!-- /ko -->
